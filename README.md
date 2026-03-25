@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+🍳 Cooking Guide Project (Tên Project của bạn)
+Một ứng dụng web hướng dẫn nấu ăn đa vai trò, kết nối người yêu ẩm thực (User) với các đầu bếp chuyên nghiệp (Chef) dưới sự quản lý của Quản trị viên (Admin).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+👥 Vai trò và Tính năng (Roles & Features)
+Dự án được phân chia thành 3 quyền truy cập chính:
 
-## Available Scripts
+1. 😋 Người dùng (User)
+Khám phá: Xem danh sách và chi tiết các công thức nấu ăn từ nhiều đầu bếp khác nhau.
 
-In the project directory, you can run:
+Yêu thích: "Thả tim" các món ăn yêu thích và lưu trữ chúng trong một danh sách riêng.
 
-### `npm start`
+Bộ sưu tập (Collections): * Tạo các bộ sưu tập cá nhân theo tên tùy chọn (vd: "Món ăn cuối tuần", "Đồ ăn Eat Clean").
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Thêm/Xóa các công thức nấu ăn vào bộ sưu tập đã tạo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. 👨‍🍳 Đầu bếp (Chef)
+Quản lý công thức: Chỉ xem và quản lý những món ăn do chính mình tạo ra.
 
-### `npm test`
+Tìm kiếm & Lọc: Tìm kiếm nhanh công thức cá nhân theo tên hoặc thẻ (tags).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+CRUD Công thức:
 
-### `npm run build`
+Thêm món mới: Hỗ trợ nhập liệu trực quan với tiêu đề, hình ảnh (upload/URL), thẻ tag, danh sách nguyên liệu và các bước thực hiện chi tiết.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Sửa/Xóa: Cập nhật hoặc gỡ bỏ các món ăn đã đăng.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Live Preview: Xem trước giao diện thẻ món ăn ngay trong quá trình nhập liệu.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. 🛡️ Quản trị viên (Admin)
+Bảng điều khiển (Dashboard):
 
-### `npm run eject`
+Thống kê tổng số lượng User và Chef trên hệ thống.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Thống kê hiệu suất: Mỗi Chef đã đóng góp bao nhiêu công thức.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Biểu đồ tương tác: Theo dõi hành vi người dùng (Xem đơn thuần vs. Tương tác yêu thích/Tạo bộ sưu tập).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Quản lý người dùng: * Lọc danh sách người dùng theo vai trò (Admin, Chef, User).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Cấp tài khoản mới cho bất kỳ vai trò nào.
 
-## Learn More
+🛠 Công nghệ sử dụng (Tech Stack)
+Frontend: ReactJS, React Router Dom.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+State Management: React Hooks (useState, useEffect, useMemo, useRef).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Styling: CSS3, Bootstrap 5 (hoặc các thư viện hỗ trợ UI khác bạn đang dùng).
 
-### Code Splitting
+Backend (Giả lập): JSON Server (đang chạy tại port 9999).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🚀 Hướng dẫn cài đặt (Getting Started)
+Để chạy dự án này ở môi trường local, hãy làm theo các bước sau:
 
-### Analyzing the Bundle Size
+1. Cài đặt Backend (JSON Server)
+Nếu bạn chưa có, hãy đảm bảo dữ liệu db.json đã sẵn sàng và chạy server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Bash
+# Cài đặt json-server nếu chưa có
+npm install -g json-server
 
-### Making a Progressive Web App
+# Chạy server (đảm bảo port 9999)
+json-server --watch db.json --port 9999
+2. Cài đặt Frontend
+Mở một terminal mới tại thư mục dự án React:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Bash
+# Cài đặt các dependencies
+npm install
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Khởi chạy ứng dụng
+npm start
+Ứng dụng sẽ tự động mở tại: http://localhost:3000
