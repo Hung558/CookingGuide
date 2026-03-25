@@ -1,72 +1,96 @@
-🍳 Cooking Guide Project (Tên Project của bạn)
-Một ứng dụng web hướng dẫn nấu ăn đa vai trò, kết nối người yêu ẩm thực (User) với các đầu bếp chuyên nghiệp (Chef) dưới sự quản lý của Quản trị viên (Admin).
+# 🍳 Cooking Guide Web App
 
-👥 Vai trò và Tính năng (Roles & Features)
-Dự án được phân chia thành 3 quyền truy cập chính:
+> 🌟 Một ứng dụng web hướng dẫn nấu ăn đa vai trò, kết nối người yêu ẩm thực với các đầu bếp chuyên nghiệp, được quản lý bởi hệ thống Admin.
 
-1. 😋 Người dùng (User)
-Khám phá: Xem danh sách và chi tiết các công thức nấu ăn từ nhiều đầu bếp khác nhau.
+---
 
-Yêu thích: "Thả tim" các món ăn yêu thích và lưu trữ chúng trong một danh sách riêng.
+## 📌 Giới thiệu
 
-Bộ sưu tập (Collections): * Tạo các bộ sưu tập cá nhân theo tên tùy chọn (vd: "Món ăn cuối tuần", "Đồ ăn Eat Clean").
+**Cooking Guide** là một nền tảng giúp người dùng khám phá, lưu trữ và quản lý các công thức nấu ăn.  
+Hệ thống hỗ trợ **3 vai trò chính**:
 
-Thêm/Xóa các công thức nấu ăn vào bộ sưu tập đã tạo.
+- 👤 User (Người dùng)
+- 👨‍🍳 Chef (Đầu bếp)
+- 🛡️ Admin (Quản trị viên)
 
-2. 👨‍🍳 Đầu bếp (Chef)
-Quản lý công thức: Chỉ xem và quản lý những món ăn do chính mình tạo ra.
+---
 
-Tìm kiếm & Lọc: Tìm kiếm nhanh công thức cá nhân theo tên hoặc thẻ (tags).
+## 👥 Roles & Features
 
-CRUD Công thức:
+### 😋 1. User (Người dùng)
 
-Thêm món mới: Hỗ trợ nhập liệu trực quan với tiêu đề, hình ảnh (upload/URL), thẻ tag, danh sách nguyên liệu và các bước thực hiện chi tiết.
+- 🔍 **Khám phá công thức**
+  - Xem danh sách và chi tiết các món ăn từ nhiều đầu bếp
 
-Sửa/Xóa: Cập nhật hoặc gỡ bỏ các món ăn đã đăng.
+- ❤️ **Yêu thích**
+  - Thả tim món ăn
+  - Lưu vào danh sách yêu thích
 
-Live Preview: Xem trước giao diện thẻ món ăn ngay trong quá trình nhập liệu.
+- 📚 **Bộ sưu tập (Collections)**
+  - Tạo collection cá nhân (VD: *Eat Clean*, *Cuối tuần*)
+  - Thêm/Xóa món ăn trong collection
 
-3. 🛡️ Quản trị viên (Admin)
-Bảng điều khiển (Dashboard):
+---
 
-Thống kê tổng số lượng User và Chef trên hệ thống.
+### 👨‍🍳 2. Chef (Đầu bếp)
 
-Thống kê hiệu suất: Mỗi Chef đã đóng góp bao nhiêu công thức.
+- 📋 **Quản lý công thức cá nhân**
+  - Chỉ thấy và quản lý món do mình tạo
 
-Biểu đồ tương tác: Theo dõi hành vi người dùng (Xem đơn thuần vs. Tương tác yêu thích/Tạo bộ sưu tập).
+- 🔎 **Tìm kiếm & Lọc**
+  - Tìm theo tên hoặc tag
 
-Quản lý người dùng: * Lọc danh sách người dùng theo vai trò (Admin, Chef, User).
+- ✏️ **CRUD Công thức**
+  - ➕ Thêm món mới:
+    - Tiêu đề
+    - Hình ảnh (Upload/URL)
+    - Tags
+    - Nguyên liệu
+    - Các bước chi tiết
+  - ✏️ Chỉnh sửa
+  - ❌ Xóa món
 
-Cấp tài khoản mới cho bất kỳ vai trò nào.
+- 👀 **Live Preview**
+  - Xem trước UI món ăn khi đang nhập liệu
 
-🛠 Công nghệ sử dụng (Tech Stack)
-Frontend: ReactJS, React Router Dom.
+---
 
-State Management: React Hooks (useState, useEffect, useMemo, useRef).
+### 🛡️ 3. Admin (Quản trị viên)
 
-Styling: CSS3, Bootstrap 5 (hoặc các thư viện hỗ trợ UI khác bạn đang dùng).
+- 📊 **Dashboard**
+  - Tổng số User & Chef
+  - Thống kê số công thức mỗi Chef
 
-Backend (Giả lập): JSON Server (đang chạy tại port 9999).
+- 📈 **Biểu đồ tương tác**
+  - Theo dõi:
+    - Lượt xem
+    - Lượt yêu thích
+    - Collection
 
-🚀 Hướng dẫn cài đặt (Getting Started)
-Để chạy dự án này ở môi trường local, hãy làm theo các bước sau:
+- 👥 **Quản lý người dùng**
+  - Lọc theo role (Admin / Chef / User)
+  - Tạo tài khoản mới
 
-1. Cài đặt Backend (JSON Server)
-Nếu bạn chưa có, hãy đảm bảo dữ liệu db.json đã sẵn sàng và chạy server:
+---
 
-Bash
-# Cài đặt json-server nếu chưa có
+## 🛠 Tech Stack
+
+| Layer       | Technology |
+|------------|-----------|
+| Frontend   | ReactJS, React Router DOM |
+| State      | React Hooks (useState, useEffect, useMemo, useRef) |
+| Styling    | CSS3, Bootstrap 5 |
+| Backend    | JSON Server (Mock API) |
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Setup Backend (JSON Server)
+
+```bash
+# Cài đặt json-server (nếu chưa có)
 npm install -g json-server
 
-# Chạy server (đảm bảo port 9999)
+# Chạy server
 json-server --watch db.json --port 9999
-2. Cài đặt Frontend
-Mở một terminal mới tại thư mục dự án React:
-
-Bash
-# Cài đặt các dependencies
-npm install
-
-# Khởi chạy ứng dụng
-npm start
-Ứng dụng sẽ tự động mở tại: http://localhost:3000
