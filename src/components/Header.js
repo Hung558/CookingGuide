@@ -1,0 +1,62 @@
+import { useEffect, useState } from "react";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import AvatarMenu from "./AvatarMenu";
+import { Link, useLocation } from "react-router-dom";
+
+import { useContext } from "react";
+import { SearchContext } from "../context/SearchContext";
+
+export default function Header({ onLogout }) {
+  const [users, setUsers] = useState([]);
+  const [currentUser, setUser] = useState(null);
+  const { search, setSearch } = useContext(SearchContext);
+  const location = useLocation();
+  const hideSearch = location.pathname === "/user/collections";
+  useEffect(() => {
+    fetch("http://localhost:9999/users")
+      .then((response) => response.json())
+      .then((result) => {
+        setUsers(result);
+        const u =
+          result.find((x) => (x.role || "").toUpperCase() === "USER") ||
+          result[0] ||
+          null;
+        setUser(u);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  return (
+    <div className="app-header sticky-top py-2">
+      <Container fluid>
+        <Row className="align-items-center">
+          <Col md={2} xs={12} className="mb-2 mb-md-0">
+            <Link
+              to="/all"
+              className="logo-link text-white text-decoration-none"
+            >
+              <span className="logo-box me-2">🍳</span>
+              <strong>RecipeBook</strong>
+            </Link>
+          </Col>
+
+          <Col md={8} xs={10} className="mb-2 mb-md-0">
+            {!hideSearch && (
+              <Form.Control
+                type="text"
+                placeholder="Tìm công thức..."
+                value={search}
+                style={{width: 938}}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            )}
+          </Col>
+
+          <Col md={2} xs={2} className="text-end">
+            <AvatarMenu user={currentUser} onLogout={onLogout} />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+}

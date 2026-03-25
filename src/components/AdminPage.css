@@ -1,0 +1,57 @@
+.admin-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Thanh trên */
+.topbar {
+  background: #343a40;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+/* Layout chính: sidebar + content */
+.main-layout {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .nav-link {
+  color: #ddd;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.2s;
+}
+
+.sidebar .nav-link:hover {
+  background: #34495e;
+  color: #fff;
+}
+
+.sidebar .nav-link.active {
+  background: #1abc9c;
+  color: #fff !important;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  background: #f5f6fa;
+  min-height: calc(100vh - 50px);
+  overflow-y: auto;
+  padding: 20px;
+}
