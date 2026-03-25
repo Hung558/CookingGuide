@@ -10,15 +10,20 @@ export default function AdminPage({ onLogout }) {
 
   return (
     <div className="admin-wrapper">
-      <div className="topbar">
-        <h4 className="brand">RecipeBook Admin</h4>
-        <Button variant="danger" size="sm" onClick={onLogout}>
+      <header className="topbar shadow-sm">
+        <h4 className="brand">RECIPEBOOK ADMIN</h4>
+        <Button 
+          variant="outline-light" 
+          size="sm"
+          className="fw-bold px-3" 
+          onClick={onLogout}
+        >
           Đăng xuất
         </Button>
-      </div>
+      </header>
 
       <div className="main-layout">
-        <div className="sidebar">
+        <aside className="sidebar">
           <Nav className="flex-column">
             <Nav.Link
               className={activeTab === "dashboard" ? "active" : ""}
@@ -26,19 +31,22 @@ export default function AdminPage({ onLogout }) {
             >
               Dashboard
             </Nav.Link>
+            
             <Nav.Link
               className={activeTab === "users" ? "active" : ""}
               onClick={() => setActiveTab("users")}
             >
-              List User
+              Quản lý User
             </Nav.Link>
           </Nav>
-        </div>
+        </aside>
 
-        <div className="content p-4">
-          {activeTab === "dashboard" && <DashboardPage />}
-          {activeTab === "users" && <UserManagement />}
-        </div>
+        <main className="content">
+          <div className="container-fluid">
+            {activeTab === "dashboard" && <DashboardPage />}
+            {activeTab === "users" && <UserManagement />}
+          </div>
+        </main>
       </div>
     </div>
   );
